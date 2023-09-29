@@ -11,20 +11,25 @@ export class UserListComponent {
   testGroup = ['Jack', 'John', 'Sam']
   Users = [
     {
-      id: 1,
+      id: '1',
       name: 'Jack',
       age: 21
     },
     {
-      id: 2,
+      id: '2',
       name: 'John',
       age: 33
     },{
-      id: 1,
+      id: '1',
       name: 'Sam',
       age: 28
     },
   ]
+  removeUser(id: string): void {
+    this.Users = this.Users.filter(user => user.id !== id)
+    console.log(id);
+
+  }
   setNewUserName(username: string): void {
     this.newUserName = username;
     console.log(username);
@@ -40,4 +45,4 @@ export class UserListComponent {
     this.Users.push(newUser)
   }
 }
-}
+
