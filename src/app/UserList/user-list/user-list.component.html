@@ -2,5 +2,8 @@
 {{ testUser }}
 <div *ngFor="let name of testGroup">{{ name }}</div>
 
+<input type="text" (change)="setNewUserName($event.target.value)">
+<button (click)="addUser()">Add User</button>
+
 <div *ngFor="let user of Users">{{ user.name }} is {{user.age}} years old</div>
 <span (click)="removeUser(user.id)">Remove</span>
