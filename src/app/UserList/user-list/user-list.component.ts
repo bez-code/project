@@ -32,7 +32,6 @@ export class UserListComponent {
   }
   setNewUserName(username: string): void {
     this.newUserName = username;
-    console.log(username);
 
   }
   addUser() {

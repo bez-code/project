@@ -1,9 +1,12 @@
-<p>user-list works!</p>
+
+
 {{ testUser }}
 <div *ngFor="let name of testGroup">{{ name }}</div>
 
 <input type="text" (change)="setNewUserName($event.target.value)">
 <button (click)="addUser()">Add User</button>
 
-<div *ngFor="let user of Users">{{ user.name }} is {{user.age}} years old</div>
+
+<div *ngFor="let user of Users">{{ user.name }} is {{user.age}} years old
 <span (click)="removeUser(user.id)">Remove</span>
+</div>
