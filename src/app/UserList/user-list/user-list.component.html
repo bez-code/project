@@ -3,3 +3,4 @@
 <div *ngFor="let name of testGroup">{{ name }}</div>
 
 <div *ngFor="let user of Users">{{ user.name }} is {{user.age}} years old</div>
+<span (click)="removeUser(user.id)">Remove</span>

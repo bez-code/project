@@ -11,4 +11,9 @@ import { UserListComponent } from './user-list.component';
   ],
   exports:[UserListComponent]
 })
-export class UserListModule { }
+export class UserListModule {
+  removeUser(user.id){
+    
+  }
+
+ }
