@@ -3,10 +3,10 @@
 {{ testUser }}
 <div *ngFor="let name of testGroup">{{ name }}</div>
 
-<input type="text" (change)="setNewUserName($event.target.value)">
+<input type="text" [(ngModel)]="newUserName"/>
 <button (click)="addUser()">Add User</button>
 
 
-<div *ngFor="let user of Users">{{ user.name }} is {{user.age}} years old
+<div *ngFor="let user of users">{{ user.name }} is {{user.age}} years old
 <span (click)="removeUser(user.id)">Remove</span>
 </div>

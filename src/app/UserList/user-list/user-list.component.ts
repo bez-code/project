@@ -9,7 +9,7 @@ export class UserListComponent {
   newUserName: string = ''
   testUser = ' This is test user';
   testGroup = ['Jack', 'John', 'Sam']
-  Users = [
+  users = [
     {
       id: '1',
       name: 'Jack',
@@ -20,18 +20,18 @@ export class UserListComponent {
       name: 'John',
       age: 33
     },{
-      id: '1',
+      id: '3',
       name: 'Sam',
       age: 28
     },
   ]
   removeUser(id: string): void {
-    this.Users = this.Users.filter(user => user.id !== id)
+    this.users = this.users.filter(user => user.id !== id)
     console.log(id);
 
   }
-  setNewUserName(username: string): void {
-    this.newUserName = username;
+  setNewUserName(userName: string): void {
+    this.newUserName = userName;
 
   }
   addUser() {
@@ -41,7 +41,7 @@ export class UserListComponent {
       name: this.newUserName,
       age: 30
     }
-    this.Users.push(newUser)
+    this.users.push(newUser)
   }
 }
 
