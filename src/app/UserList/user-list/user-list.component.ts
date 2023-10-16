@@ -41,7 +41,8 @@ export class UserListComponent {
       name: this.newUserName,
       age: 30
     }
-    this.users.push(newUser)
+    this.users.push(newUser),
+    this.newUserName = ''
   }
 }
 
