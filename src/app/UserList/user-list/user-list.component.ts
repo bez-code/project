@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { UserInterface } from 'src/app/types/user.interface';
+
 
 @Component({
   selector: 'app-user-list',
@@ -6,43 +8,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent {
-  newUserName: string = ''
-  testUser = ' This is test user';
-  testGroup = ['Jack', 'John', 'Sam']
-  users = [
-    {
-      id: '1',
-      name: 'Jack',
-      age: 21
-    },
-    {
-      id: '2',
-      name: 'John',
-      age: 33
-    },{
-      id: '3',
-      name: 'Sam',
-      age: 28
-    },
-  ]
-  removeUser(id: string): void {
-    this.users = this.users.filter(user => user.id !== id)
-    console.log(id);
+  @Input() users: UserInterface[] = []
+  @Output() removeUser = new EventEmitter<string>()
+  @Output() addUserEvent = new EventEmitter<string>()
 
-  }
+  newUserName: string = ''
+
+
   setNewUserName(userName: string): void {
     this.newUserName = userName;
-
   }
+
   addUser() {
-    const uniqueId = Math.random().toString(16)
-    const newUser = {
-      id: uniqueId,
-      name: this.newUserName,
-      age: 30
-    }
-    this.users.push(newUser),
+    this.addUserEvent.emit(this.newUserName)
     this.newUserName = ''
   }
+
 }
 

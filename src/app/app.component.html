@@ -1,6 +1,8 @@
 <router-outlet></router-outlet>
 <h1>App component</h1>
 
-
-  <app-user-list></app-user-list>
-
+<app-user-list
+  [users]="users"
+  (removeUser)="removeUser($event)"
+  (addUserEvent)="addUser($event)"
+></app-user-list>
